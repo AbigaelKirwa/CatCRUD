@@ -9,3 +9,10 @@ exports.create = (req, res)=>{
 exports.read = (req, res)=>{
     res.send(`cat name: ${cats}`)
 }
+
+exports.update = (req,res)=>{
+    const {id} = req.params
+    const {name} = req.body
+    cats[id] = name
+    res.send(`cat names:${cats}`) 
+}
