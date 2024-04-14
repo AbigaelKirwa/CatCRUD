@@ -16,3 +16,9 @@ exports.update = (req,res)=>{
     cats[id] = name
     res.send(`cat names:${cats}`) 
 }
+
+exports.delete = (req, res)=>{
+    const {id} = req.params
+    cats.splice(id,1)
+    res.send(`cat names:${cats}`)
+}
